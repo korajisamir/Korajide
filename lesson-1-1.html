@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lektion 1.1 - Deutschlernen mit Koraji</title>
+    <style>
+        :root {
+            --schwarz: #000000;
+            --rot: #DD0000;
+            --gold: #FFCE00;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+        
+        .header {
+            background: var(--schwarz);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: var(--gold);
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .back-link {
+            margin-bottom: 20px;
+        }
+        
+        .back-link a {
+            color: var(--rot);
+            text-decoration: none;
+        }
+        
+        .lesson-title {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--gold);
+        }
+        
+        .theory-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .theory-box h3 {
+            color: var(--schwarz);
+            margin-top: 0;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        
+        .conjugation-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .conjugation-item {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .conjugation-item .pronoun {
+            font-weight: bold;
+            color: var(--rot);
+        }
+        
+        .exercise {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .exercise h3 {
+            color: var(--schwarz);
+            margin-top: 0;
+        }
+        
+        .exercise-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .exercise-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .exercise-input input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .exercise-input input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        
+        .check-btn {
+            background: var(--rot);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .feedback.correct {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        
+        .feedback.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        
+        .premium-lock {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px dashed var(--rot);
+            margin: 20px 0;
+        }
+        
+        .premium-lock h3 {
+            color: var(--rot);
+        }
+        
+        .btn {
+            background: var(--rot);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+            color: var(--schwarz);
+        }
+        
+        .progress-bar {
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .progress {
+            background: var(--rot);
+            height: 10px;
+            border-radius: 5px;
+            width: 20%;
+        }
+        
+        .premium-badge {
+            background: var(--gold);
+            color: var(--schwarz);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🇩🇪 Deutschlernen mit Koraji</h1>
+        <p>Lektion 1.1: Verb - Konjugation</p>
+    </div>
+    
+    <div class="container">
+        <div class="back-link">
+            <a href="dashboard.html">← Zurück zum Dashboard</a>
+        </div>
+        
+        <div class="lesson-title">
+            <h2>📘 Lektion 1.1: Verb - Konjugation</h2>
+            <p>Personalpronomen und Verb-Endungen</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+        
+        <div class="theory-box">
+            <h3>📝 Theorie</h3>
+            <p>Personalpronomen > Endung / الضمائر الشخصية > النهايات</p>
+            
+            <div class="conjugation-table">
+                <div class="conjugation-item">
+                    <span class="pronoun">ich</span> lern<span class="premium-badge">-e</span>
+                </div>
+                <div class="conjugation-item">
+                    <span class="pronoun">wir</span> lern<span class="premium-badge">-en</span>
+                </div>
+                <div class="conjugation-item">
+                    <span class="pronoun">du</span> lern<span class="premium-badge">-st</span>
+                </div>
+                <div class="conjugation-item">
+                    <span class="pronoun">ihr</span> lern<span class="premium-badge">-t</span>
+                </div>
+                <div class="conjugation-item">
+                    <span class="pronoun">er/sie/es</span> lern<span class="premium-badge">-t</span>
+                </div>
+                <div class="conjugation-item">
+                    <span class="pronoun">sie/Sie</span> lern<span class="premium-badge">-en</span>
+                </div>
+            </div>
+            
+            <p><strong>Beispiele / أمثلة:</strong></p>
+            <ul>
+                <li>Ich lerne Deutsch.</li>
+                <li>Du lernst Deutsch.</li>
+                <li>Er lernt Deutsch.</li>
+                <li>Wir lernen Deutsch.</li>
+            </ul>
+        </div>
+        
+        <div class="exercise">
+            <h3>✏️ Übung 1: kommen</h3>
+            
+            <div class="exercise-item">
+                <p>a) Maria komm__ aus Rom.</p>
+                <div class="exercise-input">
+                    <input type="text" id="ex1a" placeholder="Endung eingeben">
+                    <button class="check-btn" onclick="checkExercise('ex1a', 't')">Prüfen</button>
+                </div>
+                <div id="ex1a-feedback" class="feedback"></div>
+            </div>
+            
+            <div class="exercise-item">
+                <p>b) Carlos komm__ aus Madrid.</p>
+                <div class="exercise-input">
+                    <input type="text" id="ex1b" placeholder="Endung eingeben">
+                    <button class="check-btn" onclick="checkExercise('ex1b', 't')">Prüfen</button>
+                </div>
+                <div id="ex1b-feedback" class="feedback"></div>
+            </div>
+            
+            <div class="exercise-item">
+                <p>c) Ich komm__ aus _______.</p>
+                <div class="exercise-input">
+                    <input type="text" id="ex1c" placeholder="Endung eingeben">
+                    <button class="check-btn" onclick="checkExercise('ex1c', 'e')">Prüfen</button>
+                </div>
+                <div id="ex1c-feedback" class="feedback"></div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>✏️ Übung 2: Verben einsetzen</h3>
+            
+            <div class="exercise-item">
+                <p>a) Murat ___ Musik. (hören)</p>
+                <div class="exercise-input">
+                    <input type="text" id="ex2a" placeholder="Verb einsetzen">
+                    <button class="check-btn" onclick="checkExercise('ex2a', 'hört')">Prüfen</button>
+                </div>
+                <div id="ex2a-feedback" class="feedback"></div>
+            </div>
+            
+            <div class="exercise-item">
+                <p>b) Du ___ in Passau. (wohnen)</p>
+                <div class="exercise-input">
+                    <input type="text" id="ex2b" placeholder="Verb einsetzen">
+                    <button class="check-btn" onclick="checkExercise('ex2b', 'wohnst')">Prüfen</button>
+                </div>
+                <div id="ex2b-feedback" class="feedback"></div>
+            </div>
+        </div>
+        
+        <div class="premium-lock">
+            <h3>🔒 Premium-Bereich</h3>
+            <p>Übung 3-7 sind für Premium-Mitglieder</p>
+            <p>التمارين ٣-٧ لأعضاء بريميوم</p>
+            <p><strong>In diesen Übungen:</strong></p>
+            <ul style="list-style: none; padding: 0;">
+                <li>✓ Verben auf -en, -t, -d (arbeiten, warten)</li>
+                <li>✓ Verben auf -s, -ss, -ß, -z (tanzen, heißen)</li>
+                <li>✓ Verben auf -el/-n (bügeln, sammeln)</li>
+                <li>✓ 15 weitere Übungen</li>
+            </ul>
+            <button class="btn" onclick="window.location.href='payment.html'">⭐ Jetzt Premium starten ab 100 درهم</button>
+        </div>
+    </div>
+    
+    <script>
+        function checkExercise(inputId, correctAnswer) {
+            const input = document.getElementById(inputId);
+            const feedback = document.getElementById(inputId + '-feedback');
+            const answer = input.value.trim().toLowerCase();
+            
+            if (answer === correctAnswer.toLowerCase()) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = '✓ Richtig! / صحيح!';
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = '✗ Leider falsch. Tipp: ' + getTip(inputId) + ' / خطأ. تلميح: ' + getTipArabic(inputId);
+            }
+        }
+        
+        function getTip(inputId) {
+            const tips = {
+                'ex1a': 'Maria (sie) → -t',
+                'ex1b': 'Carlos (er) → -t',
+                'ex1c': 'ich → -e',
+                'ex2a': 'Murat (er) → hört',
+                'ex2b': 'du → wohnst'
+            };
+            return tips[inputId] || 'Probiere es nochmal';
+        }
+        
+        function getTipArabic(inputId) {
+            const tips = {
+                'ex1a': 'ماريا (هي) → -t',
+                'ex1b': 'كارلوس (هو) → -t',
+                'ex1c': 'أنا → -e',
+                'ex2a': 'مراد (هو) → hört',
+                'ex2b': 'أنت → wohnst'
+            };
+            return tips[inputId] || 'حاول مرة أخرى';
+        }
+        
+        // Prüfe ob User eingeloggt ist
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
