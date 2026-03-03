@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrieren - Deutschlernen mit Koraji</title>
+    <style>
+        :root {
+            --schwarz: #000000;
+            --rot: #DD0000;
+            --gold: #FFCE00;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .register-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        h1 {
+            color: var(--schwarz);
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--schwarz);
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        
+        .btn {
+            width: 100%;
+            background: var(--rot);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background: #b30000;
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+            color: var(--schwarz);
+        }
+        
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .links a {
+            color: var(--rot);
+            text-decoration: none;
+        }
+        
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>🇩🇪 Deutschlernen mit Koraji</h1>
+        <div class="subtitle">Kostenlos registrieren / التسجيل مجاني</div>
+        
+        <form id="registerForm" onsubmit="handleRegister(event)">
+            <div class="input-group">
+                <label>Name / الاسم</label>
+                <input type="text" id="name" required>
+            </div>
+            
+            <div class="input-group">
+                <label>E-Mail / البريد الإلكتروني</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Passwort / كلمة المرور</label>
+                <input type="password" id="password" required minlength="6">
+            </div>
+            
+            <div class="input-group">
+                <label>Sprache / اللغة</label>
+                <select id="language">
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="ar">🇸🇦 عربي</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn">Kostenlos registrieren / تسجيل مجاني</button>
+        </form>
+        
+        <div class="links">
+            <a href="login.html">← Zurück zum Login / رجوع لتسجيل الدخول</a>
+        </div>
+        
+        <div class="success" id="successMessage">
+            ✅ Registrierung erfolgreich! Bitte bestätige deine E-Mail.<br>
+            ✅ تم التسجيل بنجاح! يرجى تأكيد بريدك الإلكتروني.
+        </div>
+    </div>
+    
+    <script>
+        function handleRegister(event) {
+            event.preventDefault();
+            
+            // Hier würde normalerweise die Registrierung stattfinden
+            // Für die Demo: Erfolg anzeigen
+            
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Nach 3 Sekunden weiterleiten
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
