@@ -1,0 +1,50 @@
+📱 DEUTSCHLERNEN MIT KORAJI - INSTALLATIONS-ANLEITUNG
+=====================================================
+
+📁 DATEIEN:
+- index.html (Startseite)
+- login.html (Login)
+- register.html (Registrierung)
+- dashboard.html (Nutzer-Bereich)
+- admin.html (Admin-Bereich)
+- lesson-1-1.html (Lektion 1.1)
+- payment.html (Zahlung)
+- style.css (Design)
+
+🚀 SCHNELLSTART MIT KOSTENLOSEM HOSTING:
+
+OPTION 1: NETLIFY (EINFACH)
+1. Gehe zu netlify.com
+2. Registriere dich kostenlos
+3. Ziehe alle Dateien per Drag & Drop
+4. Fertig! Deine App ist online
+
+OPTION 2: RENDER (MIT DATENBANK)
+1. Gehe zu render.com
+2. Registriere dich
+3. Erstelle neuen "Static Site"
+4. Lade Dateien hoch
+5. Verbinde mit MongoDB (für Nutzerdaten)
+
+OPTION 3: INFINITYFREE (PHP)
+1. Gehe zu infinityfree.com
+2. Kostenloses Konto erstellen
+3. Lade Dateien via FTP hoch
+4. Fertig!
+
+👑 ADMIN-ZUGANG:
+E-Mail: admin@koraji.de
+Passwort: Admin123!
+
+📧 TEST-ACCOUNTS:
+test-free@koraji.de / Test123!
+test-basic@koraji.de / Test123!
+test-plus@koraji.de / Test123!
+test-vip@koraji.de / Test123!
+
+🔧 ANPASSUNGEN:
+1. In den HTML-Dateien: Ersetze "koraji.de" mit deiner Domain
+2. Für E-Mails: SMTP-Server konfigurieren
+3. Für Zahlungen: CMI/Stripe API-Keys einfügen
+
+❓ PROBLEME? Frag einfach!
