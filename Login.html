@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Deutschlernen mit Koraji</title>
+    <style>
+        :root {
+            --schwarz: #000000;
+            --rot: #DD0000;
+            --gold: #FFCE00;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        h1 {
+            color: var(--schwarz);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--schwarz);
+            font-weight: bold;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+        
+        .btn {
+            width: 100%;
+            background: var(--rot);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background: #b30000;
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+            color: var(--schwarz);
+        }
+        
+        .btn-gold:hover {
+            background: #e6b800;
+        }
+        
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .links a {
+            color: var(--rot);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        .error {
+            color: var(--rot);
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>🇩🇪 Deutschlernen mit Koraji</h1>
+        <div class="subtitle">Bitte anmelden</div>
+        
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label>E-Mail</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Passwort</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <button type="submit" class="btn">Anmelden</button>
+        </form>
+        
+        <button class="btn btn-gold" onclick="window.location.href='register.html'">Registrieren</button>
+        
+        <div class="links">
+            <a href="#">Passwort vergessen?</a>
+            <a href="index.html">← Zurück</a>
+        </div>
+        
+        <div class="error" id="errorMessage">Falsche E-Mail oder Passwort</div>
+    </div>
+    
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Test-Accounts
+            const testAccounts = [
+                { email: 'test-free@koraji.de', pass: 'Test123!', role: 'free' },
+                { email: 'test-basic@koraji.de', pass: 'Test123!', role: 'basic' },
+                { email: 'test-plus@koraji.de', pass: 'Test123!', role: 'plus' },
+                { email: 'test-vip@koraji.de', pass: 'Test123!', role: 'vip' },
+                { email: 'admin@koraji.de', pass: 'Admin123!', role: 'admin' }
+            ];
+            
+            const account = testAccounts.find(a => a.email === email && a.pass === password);
+            
+            if(account) {
+                localStorage.setItem('user', JSON.stringify({
+                    email: account.email,
+                    role: account.role,
+                    name: account.email.split('@')[0]
+                }));
+                
+                if(account.role === 'admin') {
+                    window.location.href = 'admin.html';
+                } else {
+                    window.location.href = 'dashboard.html';
+                }
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
